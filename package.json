@@ -1,0 +1,15 @@
+{
+  "name": "insomnia-plugin-starkbank-ecdsa",
+  "version": "1.0.0",
+  "private": true,
+  "insomnia": {
+    "name": "starkbank-ecdsa",
+    "displayName": "starkbank ecdsa",
+    "description": "Generate Starkbank Authentication Headers and sign with ECDSA using your private key",
+    "unlisted": false
+  },
+  "main": "main.js",
+  "dependencies": {
+    "starkbank-ecdsa": "^1.1.5"
+  }
+}
