@@ -10,9 +10,9 @@ module.exports.requestHooks = [
     let timestamp = Math.floor(Date.now() / 1000);
 
     if (accessId && pkContent) {
-      let body = context.request.getBody() || "";
+      let body = context.request.getMethod() === 'GET' ? "" : JSON.starkbank(context.request.getBody());
       let pk = PrivateKey.fromPem(pkContent);
-      let message = `${accessId}:${timestamp}:${JSON.stringify(body)}`
+      let message = `${accessId}:${timestamp}:${body}`
 
       let signature = Ecdsa.sign(message, pk);
 
